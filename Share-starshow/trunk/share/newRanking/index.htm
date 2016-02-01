@@ -83,14 +83,16 @@
     $(function(){ 
 
         //var id="113201";
+        //  var id="111557";
+        // var uid="114655";
         var q_url="http://api.xingxiu.tv/index.php?app=mobile&mod=Recommend&act=rank&star_id="+id+"&uid="+uid+"&returntype=jsonp&callback=?"
         // var q_url="http://api.xingxiu.tv/index.php?app=mobile&mod=Recommend&act=rank&star_id=118822&uid=818678&returntype=jsonp&callback=?"
           $.getJSON(q_url,function(data){
             console.log(data);
             // $('.swiper-wrapper img').attr('src',data.star.banner);
                   if(data.star!=undefined){
-                      var star_str='<div class="ranksum_zan">'+
-                                    '<p class="ranksum_zan_icon"><em></em></p>'+
+                      var star_str='<div class="ranksum_zan" is_digg='+data.star.is_digg+'>'+
+                                    '<p class="ranksum_zan_icon" onclick="like($(this))"><em></em></p>'+
                                     '<p>'+data.star.digg_count+'</p>'+
                                     '</div>'+
                                     '<div class="ranksum_title">'+
@@ -196,11 +198,15 @@
                         });//轮播图
                       
                   }
-                   $('.ranksum_zan_icon').on('tap',function(){
-                  //console.log('111');
+                //    $('.ranksum_zan_icon').on('tap',function(){
+                //   //console.log('111');
+                //   $('.ranksum_zan').addClass('active_zan');
+                //   $(this).next('p').text(parseInt($(this).next('p').text())+1);
+                // })
+                 var is_digg=$('.ranksum_zan').attr('is_digg');
+                if(is_digg=='1'){
                   $('.ranksum_zan').addClass('active_zan');
-                  $(this).next('p').text(parseInt($(this).next('p').text())+1);
-                }) 
+                }   
             });
 
         var downloadurl='http://t.cn/R7COgYb'     //下载地址
@@ -209,38 +215,38 @@
         $('.download').on('click',function () {
             window.location.href = downloadurl;
         });
-      
 
+       
     })
     
-    // function like() {
-    //     $('#pointbtn').addClass('bjddd');
-    //   var lurl="http://star.xingxiu.tv/star?star_id="+id+"&uid="+uid+"&returntype=jsonp&callback=?";
-    //     $.ajax({
-    //         url : lurl,
-    //         dataType : 'json',
-    //        //data: { shareUUID: '202f15c224104f5db93fb582e4f5b418', code: '0116a83ed72af3a0d6643460a1355721'},
-    //         type : 'get',
-    //         global : false,
-    //         success : function(data) {
-    //             var v = data.resultCode;
-    //             if('2' == v){
-    //                 location.href = data.info ;
-    //             }else if ('1' == v) {
-    //                 $('.friendDiv').prepend('<li><img src="'+data.info.avatar+'" class="img-scale" /> </li>').show();
-    //                 var likeNum = parseInt($('#likeNum').text());
-    //                 likeNum = likeNum+1;
-    //                 $('#likeNum').text(likeNum);
-    //                 //$('#pointbtn').unbind();
-    //                 $('#pointbtn').removeAttr("onclick");
-    //             } else if ('0' == v) {
-    //                 alert(data.info);
-    //                 //$('#pointbtn').unbind();
-    //                 $('#pointbtn').removeAttr("onclick");
-    //             }
-    //         }
-    //     });
-    // }
+    function like(obj) {
+    
+       // var id="111557";
+       //  var uid="114655";
+        var is_digg=$('.ranksum_zan').attr('is_digg');
+        if(is_digg==0){
+         var lurl="http://api.xingxiu.tv/index.php?app=mobile&mod=Recommend&act=doStarDigg&star_id="+id+"&uid="+uid+"&returntype=jsonp&callback=?";
+        $.ajax({
+            url : lurl,
+            dataType : 'json',
+           //data: { shareUUID: '202f15c224104f5db93fb582e4f5b418', code: '0116a83ed72af3a0d6643460a1355721'},
+            type : 'get',
+            global : false,
+            success : function(data) {
+              console.log(data);
+                var v = data.result;
+                if(data.result=='succ'){
+                    $('.ranksum_zan').addClass('active_zan');
+                    obj.next('p').text(parseInt(obj.next('p').text())+1)
+                }else {
+                  alert(data.msg);
+                }
+            }
+        });
+
+        }
+
+    }
     /*by YaraYu 2016/1/25*/
     // $('.shadow').on('tap',function(){
     //   $(this).hide();

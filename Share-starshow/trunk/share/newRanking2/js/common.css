@@ -650,9 +650,9 @@ img{vertical-align: middle;}
 .share_deli_rank .color66a{
     color: #f15463;
 }
-@font-face { font-family: SourceHanSansCN-Light; src: url(../images/SourceHanSansCN-Light.otf); }
+
 body{
-    font-family: SourceHanSansCN-Light;
+    font-family: '微软雅黑';
 }
 .y_rank_num .sharebyme{
     border-bottom: 0.1rem solid #cbcbcb;
