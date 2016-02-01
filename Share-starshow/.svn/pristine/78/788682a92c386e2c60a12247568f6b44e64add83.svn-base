@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+ <head lang="zh-CN">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta charset="utf-8" /> 
+  <meta name="apple-itunes-app" content="app-id=903692043" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" /> 
+  <meta name="format-detection" content="telephone=no" /> 
+  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+  <title>视频分享</title> 
+  <link rel="stylesheet" href="./styles/share.css" /> 
+ </head> 
+ <body class="bjf2"> 
+  <div class="share">
+    <div class="share_vedio">
+      <div class="share_vedio_content">
+        <video src="" controls="controls" id="video" autoplay="autoplay">
+          
+        </video>
+        <!-- <img src="" alt="" class="poster"> -->
+      </div>
+      <div class="share_video_title">
+      </div>
+    </div>
+    <div class="share_title">
+      <img src="images/fasionicon.png" alt="">
+      <div class="share_title_sum">
+        <h2><strong>＃FASHION</sstrong> 时尚全明星</h2>
+        <p>共<span>7454178</span>条视频</p>
+      </div>
+    </div>
+    <div class="share_list">
+      <ul id="sharelist">
+      </ul>
+    </div>
+    <div class="flo_down downurl">
+    </div>
+  </div>
+
+  <script src="./js/zepto.js"></script> 
+
+  <script>
+    var id = location.search.replace(/\?id=(\d+).*/,'$1');
+    console.log("id=="+id);
+    var uid = location.search.slice(location.search.indexOf("&uid=") + 5).split("&")[0];
+    // alert("id="+id+"uid="+uid);    
+    $(function(){        
+        //var id="113201";
+        var v_url="http://api.xingxiu.tv/index.php?app=mobile&mod=Index&act=videoDetail&id="+id+"&returntype=jsonp&callback=?";
+        // var v_url="http://api.xingxiu.tv/index.php?app=mobile&mod=Index&act=videoDetail&id=16&returntype=jsonp&callback=?";
+          $.getJSON(v_url,function(data){
+                  if(data.result=='succ'){
+                   // alert("qqq");
+                    // console.log(data);
+                      var v_detail='<h1 aid="'+data.info.detail.id+'">'+data.info.detail.title+'</h1>'+
+                                   '<h2>'+data.info.detail.content+'</h2>'+
+                                   '<p class="share_video_title_p ">'+
+                                   '<em class="clickicon"><em class="activeIcon"></em></em>'+
+                                   '<span class="clickicon_span">'+data.info.detail.digg_count+'</span></p>';
+                      $('.share_video_title').append(v_detail);
+                      $('#video').attr('src',data.info.detail.video);
+                      // $('#video').css("background-image","url("+data.info.detail.thumb+")");
+                      // $('.poster').attr('src',data.info.detail.thumb);
+                      $('.share_title_sum p span').text(data.info.detail.total);
+                      var str="";
+                      for(var i=0;i<data.info.list.length;i++){
+                        
+                        str +='<li class="share_list_li">'+
+                                  '<a href="'+data.info.list[i].shareurl+'">'+
+                                 '<img src="'+data.info.list[i].thumb+'" alt="'+data.info.list[i].title+'" class="share_list_img">'+
+                                 '<div class="share_list_detail">'+
+                                 '<h3>'+data.info.list[i].title+'</h3>'+
+                                 '<h4>'+data.info.list[i].desc+'</h4>'+
+                                 '<h6>'+
+                                  '<span class="share_list_look"><em></em><strong>'+data.info.list[i].play+'</strong></span>'+
+                                  '<span class="share_list_like"><em></em><strong>'+data.info.list[i].digg_count+'</strong></span>'+
+                                  '</h6>'+
+                                  '</div>'+
+                              '<em class="righticon">'+
+                              '<div class="clear"></div></em>'+
+                              '</a>'+
+                              '</li>';
+                      }
+                      $('#sharelist').append(str);
+                      
+                   }
+            });
+          $('.share_video_title_p .clickicon').live('click',function(){
+            //alert("1111");
+            var shareP=$('.share_video_title_p');
+            var clickicon_span=$('.clickicon_span');
+            var aid=$('.share_video_title h1').attr('aid');
+            var zan_url="http://api.xingxiu.tv/index.php?app=mobile&mod=Home&act=doDigg&aid="+aid+"&type=2&returntype=jsonp&callback=?";
+              $.ajax({
+                url:zan_url,
+                type:'get',
+                success:function(data){
+                  if(data.result=='succ'){
+                    shareP.addClass('share_active');
+                    var likesum= parseInt(clickicon_span.text())+1;
+                    //console.log($(this).next('span').text()+'qqqq'+'likesum'+likesum);
+                    clickicon_span.text(likesum);
+                  }
+                }
+              })
+          })
+
+        var downloadurl='http://t.cn/R7COgYb'     //下载地址
+        var infourl='starshowtv://uid=112039';
+
+        $('.downurl').on('click',function () {
+          window.location.href = downloadurl;
+        });
+
+    })
+  </script> 
+ </body>
+</html>

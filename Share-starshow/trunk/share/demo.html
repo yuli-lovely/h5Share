@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta name='apple-itunes-app' content='app-id=903692043'>
+<!--    <meta name='apple-itunes-app' content='app-id=477927812'> -->
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="http://misc.360buyimg.com/lib/skin/2013/base.css" media="all" />
+	<link rel="stylesheet" href="css/common.css"/>
+	<link rel="stylesheet" href="css/exchange.css"/>
+	<link rel="stylesheet" href="css/equipment.css"/>
+    
+	<script type="text/javascript">window.pageConfig = { compatible: true }; </script>
+	<script type="text/javascript" src="http://misc.360buyimg.com/jdf/lib/jquery-1.6.4.js"></script>
+	<script type="text/javascript" src="http://misc.360buyimg.com/jdf/1.0.0/unit/base/1.0.0/base.js"></script>
+
+<script type="text/javascript">
+//$(function(){
+// 	 function testApp(url) {  
+//     var timeout, t = 1000, hasApp = true;  
+//     setTimeout(function () {  
+//         if (hasApp) {  
+//             alert('安装了app');  
+//         } else {  
+//             alert('未安装app');  
+//         }  
+//         document.body.removeChild(ifr);  
+//     }, 2000)  
+  
+//     var t1 = Date.now();  
+//     var ifr = document.createElement("iframe");  
+//     ifr.setAttribute('src', url);  
+//     ifr.setAttribute('style', 'display:none');  
+//     document.body.appendChild(ifr);  
+//     timeout = setTimeout(function () {  
+//          var t2 = Date.now();  
+//          if (!t1 || t2 - t1 < t + 100) {  
+//              hasApp = false;  
+//          }  
+//     }, t);  
+// }  
+//})
+$(function(){
+
+//  var downloadurl='http://t.cn/R7COgYb'     //下载地址
+// var infourl='starshowtv://';
+
+// function aa(){
+//     var ifr = document.createElement('iframe');
+//     ifr.src = infourl;
+//     ifr.style.display = 'none';
+//     document.body.appendChild(ifr);
+//     window.setTimeout(function(){
+//         document.body.removeChild(ifr);
+//        // window.location.href = infourl;
+//     },1000)
+
+// }
+           
+//    aa();
+document.getElementById('openApp').onclick = function(e){
+        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+        // 否则打开a标签的href链接
+        var ifr = document.createElement('iframe');
+        ifr.src = 'starshowtv://uid=112039';
+        ifr.style.display = 'none';
+        document.body.appendChild(ifr);
+        window.setTimeout(function(){
+            document.body.removeChild(ifr);
+        },3000)
+    };
+    document.getElementById('openApp').click();
+});
+</script>
+</head>
+<body>
+<div id="body">
+    <a href="http://t.cn/R7COgYb" id="openApp" style="display:none;">贴吧客户端</a>
+</body>
+</html>

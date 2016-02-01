@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=320.1,minimum-scale=1.0,maximum-scale=1.0" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<link type="text/css" rel="stylesheet" href="../public/css/pub.css" />
+<link type="text/css" rel="stylesheet" href="../public/css/mtPhotos.css" />
+<script src="../public/js/dist/common.js" type="text/javascript"></script>
+<!-- <script type="text/javascript" src="../public/js/share.js"></script> -->
+<title>STAR SHOW</title>
+
+</head>
+
+<body style="background:#000;">
+
+<div id="loadingMark" class="loadingMark" style="background:#000;top:0px;">
+  <div id="loading">
+    <p>加载中...</p>
+  </div>
+</div>
+<script type="text/javascript">
+(function() {
+  common.loadPosition();
+  common.addHandler(window,"orientationchange",function() {
+    common.loadPosition();
+  });
+  common.addHandler(document.documentElement,'touchmove',common.scrollFn);
+})();
+</script>
+<div id="content">
+<!-- header -->
+<div class="imagesHeader" id="header" style="display:none">
+  <div class="back">
+    
+  </div>
+  <div class="comment">
+    
+  </div>
+  <div class="title">...</div>
+</div>
+
+
+<!-- 图片信息 -->
+<div class="imagesInfo" id="imagesInfo">
+  <div class="funcMask" style="display:none"></div>
+  <!-- <div class="func">
+       <div class="totle">...</div>
+        <div class="titles">...</div>
+        <div class="brand">...</div>
+        <span class="line"></span>
+        <div class="laiy"></div>
+   
+
+  </div> -->
+  <section class="des" style="display:none">...</section>
+</div>
+
+<div class="bottom">
+   <div class="left"></div>
+   <a href="http://t.cn/R7COgYb" class="right"></a>
+</div>
+
+</div>
+<script type="text/javascript">
+ var pid=location.search.replace(/\?id=(\d+).*/,'$1');
+var url_path="http://api.xingxiu.tv";
+var photosUrl=url_path+"/index.php?app=mobile&mod=Found&act=getCirclePhotoDetail&pid="+pid+"&returntype=jsonp&callback=photos.showImgData";
+</script>
+<script src="../public/js/dist/iscroll.js" type="text/javascript"></script>
+<script src="../public/js/photos/photos.js" type="text/javascript"></script>
+<!-- <img src="<?php echo $baidu; ?>" width="0" height="0" /> -->
+</body>
+</html>

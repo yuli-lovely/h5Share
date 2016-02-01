@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- saved from url=(0187)http://bznew.createapp.cn/api/h6/index.html?wxid=220&headimg=http://wx.qlogo.cn/mmopen/7Jn3GYPMVgCyyg4SIal9Qmxee4pwHVT4tFxjjICnIvgrfS5X9Tw9efPeIQsEUicbibIHIsdC09UCFLdbVgGmekL76z0pIEvZxK/0 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>时尚星秀邀请函</title>
+    <meta name="viewport" content="width=640,user-scalable=0">
+    <link type="text/css" rel="stylesheet" href="./js/theme.css">
+	<script src="./js/hm.js"></script><script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?71eb655e87c9049cdd47aa5ac979723e";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+
+    </script>
+</head>
+<body onload="parent.location='http://star.xingxiu.tv/oauth2/come'">
+<img src="./js/icon.png" style="display: none;">
+<div class="container" style="height: 579px;">
+    <section class="page1 page page-active" style="display: block;">
+        <article class="speak"></article>
+       <!--  <article class="remind static">
+            <span></span>
+            <h3>提醒我</h3>
+        </article>
+        <article class="message static">
+            <span></span>
+            <h3>信息</h3>
+        </article> -->
+        <article class="landing st">
+            <span id="status"></span>
+            <h3>接听</h3>
+        </article>
+       <!--  <article class="hangup st">
+            <span id="status0"></span>
+            <h3>挂断</h3>
+        </article> -->
+    </section>
+    <section class="page2 page" style="display: none;">
+        <div class="video"></div>
+        <!--<article class="speak"></article>-->
+        <article class="myphoto">
+            <img src="./js/0" id="headimg">
+            <script src="./js/jquery-1.8.3.js"></script>
+            <input type="file" accept="image/*;capture=camera" class="input" id="_file" style="display: none;">
+        </article>
+        <article class="uploadV st">
+            <span id="uploadimg"></span>
+        </article>
+        <article class="hangupV st">
+            <span id="status2"></span>
+        </article>
+        <article class="audioV st">
+            <span id="audio0"></span>
+            <!--<span id="audio1" style="display: none;"></span>-->
+        </article>
+    </section>
+</div>
+<script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/jquery.url.js"></script>
+<script type="text/javascript" src="./js/soundjs-0.6.1.min.js"></script>
+<script src="./js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/index.upload.js"></script>
+<script type="text/javascript">
+
+</script>
+</body></html>

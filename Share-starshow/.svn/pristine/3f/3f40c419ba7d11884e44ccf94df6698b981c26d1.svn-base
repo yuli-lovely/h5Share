@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+          <meta charset="UTF-8">
+          <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+          <meta name="apple-mobile-web-app-capable" content="yes">
+          <meta name="format-detection" content="telephone=no, email=no">
+          <link type="text/css" rel="stylesheet" href="../public/css/pub.css" />
+           <!--  <link type="text/css" rel="stylesheet" href=".../public/css/mtChannel.css" /> -->
+        <style type="text/css">
+       .wrapper{text-align:left;margin:0 auto;width:100%;overflow: hidden;/*max-width: 480px;*/ background-color:#f8f8f8; }
+            .bottom {
+              position: fixed;
+              bottom: 0px;
+              background-color: rgba(37,37,37,0.95);
+              height: 73px;
+              width: 100%;
+              overflow: hidden;
+             /* max-width: 480px;*/
+              }
+              .bottom .left {
+              background: url('../public/images/qsbg.png') 0 0 no-repeat;
+              background-size: 100%;
+              width:150px;
+              height:60px;
+              position: relative;
+              float: left;
+              top: 5px;
+              left: 15px;
+              }
+              .bottom .right {
+              background: url('../public/images/iphonedl.png') 0 0 no-repeat;
+              background-size: 100%;
+              width:100px;
+              height:35px;
+              position: relative;
+              float: right;
+              top: 20px;
+              right: 10px;
+              }
+              /*iphone4修正*/
+              @media screen and (device-height: 480px) and (-webkit-max-device-pixel-ratio : 2) {
+
+              }
+
+              /*iphone5修正*/  
+              @media screen and (device-height: 568px) and (-webkit-max-device-pixel-ratio : 2) {
+
+              }
+
+              /*iphone6修正*/
+              @media screen and (device-height: 667px) and (-webkit-max-device-pixel-ratio : 2) {
+                
+              }
+
+              /*iphone6 plus修正1242*2208*/
+              @media screen and (device-height:736px) and (-webkit-max-device-pixel-ratio : 3) {
+                
+              }
+              .a_top .tp{width: 100%;position: relative;overflow: hidden;}
+              .title_c{
+              width: 100%;
+              line-height: 20px;
+              position: relative;
+              top: 0;
+              left: 0;
+              height: 350px;
+              display: block;
+              background-color: #fff;
+              }
+              .title_c .p1{
+              font-size: 23px;
+              position: relative;
+              left: 6px;
+              top: 430px;
+              padding-left: 6px;
+              display: inline-block;
+              padding-right: 14px;
+              line-height: 26px;
+              color: #fff;
+              }
+              .title_c .rN{ 
+                font-size: 10px;
+              position: relative;
+              width: 90%;
+              left: 6px;
+              top: 430px;
+              padding-left: 6px;
+              padding-right: 14px;
+              line-height: 26px;
+              color: #fff;}
+              .title_c .rN .i1{
+                background: url('../public/images/icon4.png') 0 0 no-repeat;
+              background-size: 100%;
+              width:11px;
+              height:13px;
+              margin-right:6px;
+              display: inline-block;
+              position: relative;
+              vertical-align: middle;
+              }
+               .title_c .rN .i2{
+                background: url('../public/images/icon3.png') 0 0 no-repeat;
+              background-size: 100%;
+              width:14px;
+              height:13px;
+              margin-right:6px;
+              display: inline-block;
+              position: relative;
+              vertical-align: middle;
+              }
+              .title_c .rN .n1{
+                padding-right:24px;
+              }
+              .title_c .p2{
+              font-size:14px;
+              position: relative;
+              left: 6px;
+              top: 430px;
+              padding-left: 6px;
+              display: inline-block;
+              padding-right: 14px;
+              line-height: 26px;
+              color: #fff;
+              height: 50px;
+              overflow: hidden;
+              }
+              .a_top .nav{width: 100%; height: 60px; display:  block;}
+              .nav .jf{width:33%; height: 25px; text-align: center; display: inline-block;position: relative;border-right:1px solid #e8e8e8;margin-top:15px;float:left; cursor: pointer;}
+              .nav .jf i{ background: url('../public/images/icon1.png') 0 0 no-repeat;background-size: 100%;width: 30px; height: 30px; display:  inline-block; }
+              .nav .jf .c{ background: url('../public/images/icon1c.png') 0 0 no-repeat;background-size: 100%;width: 30px; height: 30px; display:  inline-block; }
+               .nav .jin{width:33%; height: 25px; text-align: center; display: inline-block;position: relative;border-right:1px solid #e8e8e8;margin-top:15px;float:left; cursor: pointer;}
+              .nav .jin i{ background: url('../public/images/icon5.png') 0 0 no-repeat;background-size: 100%;width:30px; height: 30px; display:  inline-block; }
+               .nav .jin .c{ background: url('../public/images/icon5c.png') 0 0 no-repeat;background-size: 100%;width: 30px; height: 30px; display:  inline-block; }
+               .nav .pl{width:33%; height: 25px; text-align: center; display: inline-block;position: relative;margin-top:15px;float: left;cursor: pointer;}
+              .nav .pl i{ background: url('../public/images/icon12.png') 0 0 no-repeat;background-size: 100%;width:30px; height:30px; display:  inline-block; }
+              .nav .pl .c{ background: url('../public/images/icon12c.png') 0 0 no-repeat;background-size: 100%;width:30px; height:30px; display:  inline-block; }
+              .con li, .con3 li{position: relative;float: left;padding-right: 1px}
+
+              .con2{background-color: #fff;}
+              .con2 li{position: relative;zoom:1;margin-top: -10px;}
+              .con2 .t{text-align: left;background-color: #f2f2f2; color: #999;width: 100%; height:35px; display: block; line-height:35px;padding-left: 10px; font-size: 16px;}
+              .con2 .c{padding:1%; width:98%; display: inline-block;position: relative; height:100%;overflow: hidden;}
+              .con2 .l{width: 30%; display: block; position: relative;float: left;}
+               .con2 .r{position: relative;float: left;width:67%;margin-left:1%;margin-top: 5%;}
+                .con2 .r p{font-size: 16px;color: #333;position: absolute;top: 5px;padding-left: 5px;}
+                .con2 .r .gp{font-size: 16px;color: #333;position: absolute;top:50px;padding-left: 5px;}
+                .con2 .r .gp{color: #d0d0d0;}
+                .con2 .r .gp .ls{margin-right: 10px;}
+                .con2 .r .gp .ls em{background: url('../public/images/number.png') 0 0 no-repeat;
+                background-size: 100%;
+                width: 16px;
+                height: 17px;
+                margin-right: 5px;
+                display: inline-block;
+                vertical-align: middle;}
+                 .con2 .r .gp .rs em{background: url('../public/images/topic.png') 0 0 no-repeat;
+                background-size: 100%;
+                width: 16px;
+                height: 17px;
+                margin-right: 5px;
+                display: inline-block;
+                vertical-align: middle;}
+              .head_t{float: left; position: relative; min-width: 210px;}
+              .head_t .t{position: absolute;left: 2px;font-size: 16px;color: #6c80a9;}
+               .head_t .c{position: relative;left: 2px;top: 20px;font-size: 14px;color: #d6d6d6;}
+             
+              
+
+               .headbg{position: relative;
+              width:90px;
+              height:96px;
+              display: block;
+              margin: 0 auto;
+              top:25px;}
+              .headbg img{border-radius: 50px;}
+              .headbg span{background: url('../public/images/dv.png') 0 0 no-repeat;background-size: 100%;width:20px; height:20px;position: absolute;right: 5px; bottom: 5px;}
+              .name{
+                text-align: center;
+              font-size: 18px;
+              color: #333;
+              position: relative;
+              top: 30px;
+              width: 100%;
+              padding-bottom: 10px;
+              overflow: hidden;
+              display: inline-block;
+              }
+              .name em{background: url('../public/images/boy.png') 0 0 no-repeat;
+              background-size: 100%;
+              width: 15px;
+              height: 16px;
+              position: relative;
+              right: -7px;
+              bottom: -1px;
+              display: inline-block;}
+              .name .sex2{background: url('../public/images/girl.png') 0 0 no-repeat;}
+
+              .level{
+                text-align: center;
+            font-size: 12px;
+            color: #c4c4c4;
+            position: relative;
+            top:16px;
+            width: 100%;
+            padding-bottom: 10px;
+            overflow: hidden;
+            display: inline-block;
+              }
+               .two{
+               width: 100%;
+              height: 70px;
+              position: relative;
+              display: block;
+              top: 20px;
+              border-bottom:1px solid #e8e8e8;
+              }
+               .two div{width:100%;
+              height: 60px;
+              display: inline-block;
+              float: left;
+              overflow: hidden;
+              text-align: center;
+              color: #c4c4c4;
+              font-size: 18px;
+              line-height: 28px;}
+               .two a{
+                width: 50px;
+                height: 26px;
+                display: inline-block;}
+              .three{
+                width: 100%;
+                height: 57px;
+                position: relative;
+                display: block;
+                top:35px;
+              }
+               .three div{width: 33%;
+              height: 60px;
+              display: inline-block;
+              float: left;
+              overflow: hidden;
+              text-align: center;
+              color: #c4c4c4;
+              font-size: 18px;
+              line-height: 28px;}
+              .three .c{color: #333;}
+        </style>
+        <title>
+            个人
+        </title>
+        <script type="text/javascript">
+          // (function(W){
+          //    var id =location.search.replace(/\?id=(\d+).*/,'$1');
+          //   if(!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent.toLowerCase())){
+          //     W.location.href = "/public/share/goods/pc.html?id="+id;//跳转地址    
+          //   }
+          // })(window);
+          
+        </script>
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <div class="container clearfix">
+                <div class="main">
+                    <div class="a_top">
+                        <div class="tp">
+                            <div class="title_c">
+                             <div class="headbg"><img src="../public/images/onepage-headp.jpg"  width="100%"></div>
+                             <p class="name">.....<em></em></p>
+                             <p class="level">....</p>
+                             <div class="two">
+                                
+                                <div class="r"><a href="javascript:;"><img src="../public/images/mpbtn.png"  width="100%"></a></div>
+                             </div>
+                             <div class="three">
+                                <div class="l"><p class="c">...</p><p>动态</p></div>
+                                <div class="m"><p class="c">...</p><p>关注</p></div>
+                                <div class="r"><p class="c">...</p><p>粉丝</p></div>
+                             </div>
+                            </div>
+                        </div>
+                        <div class="nav">
+                          <span class="jf"  id="part1"><i class="c"></i></span>
+                          <span class="jin" id="part2"><i></i></span>
+                          <span class="pl"  id="part3"><i></i></span>
+                        </div>
+                        <div class="con">
+                            <ul>
+                             
+                            </ul>
+                        </div>
+
+                        <div class="con2" style="display:none;">
+                            <ul>
+                              <li>
+                                <p class="t">Ta发起的话题</p>
+                                <div class="c">
+                                  <div class="l"><img src="../public/images/onepage-pic2.jpg" width="100%"></div>
+                                  <div class="r">
+                                    <p>#大家一起来说说你喜爱的明星吧...</p>
+                                    <div class="gp">
+                                      <span class="ls"><em></em>232423</span>
+                                      <span class="rs"><em></em>232423</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                               <li>
+                                <p class="t">Ta发起的话题</p>
+                                <div class="c">
+                                  <div class="l"><img src="../public/images/onepage-pic2.jpg" width="100%"></div>
+                                  <div class="r">
+                                    <p>#大家一起来说说你喜爱的明星吧...</p>
+                                    <div class="gp">
+                                      <span class="ls"><em></em>232423</span>
+                                      <span class="rs"><em></em>232423</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+
+                            </ul>
+                        </div>
+
+                        <div class="con3" style="display:none;">
+                            <ul>
+                                 
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+             <div class="left"></div>
+               <a href="" class="right"></a>
+            </div>
+        </div>
+        
+     
+       <script src="../public/js/jquery1.9.1.js" type="text/javascript"></script>
+        <script type="text/javascript">        
+         var did = location.search.replace(/\?uid=(\d+).*/,'$1');
+          var grurl = 'http://api.xingxiu.tv/index.php?app=mobile&mod=My&act=userinfo&uid='+did+'&returntype=jsonp&callback=?'; 
+          var purl1="http://api.xingxiu.tv/index.php?app=mobile&mod=My&act=getFeedList&uid="+did+"&returntype=jsonp&callback=?"
+          var purl2="http://api.xingxiu.tv/index.php?app=mobile&mod=My&act=getTopicList&uid="+did+"&returntype=jsonp&callback=?"
+          var purl3="http://api.xingxiu.tv/index.php?app=mobile&mod=My&act=getAtmeList&uid="+did+"&returntype=jsonp&callback=?"
+        $(".con li").css("width",($(window).width()-3)/3+"px");
+        </script>  
+         <script type="text/javascript" src="../public/js/person.js"></script>
+
+    </body>
+</html>

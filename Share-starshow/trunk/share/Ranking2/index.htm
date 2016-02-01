@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+ <head lang="zh-CN">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta charset="utf-8" /> 
+  <meta name="apple-itunes-app" content="app-id=903692043"/> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" /> 
+  <meta name="format-detection" content="telephone=no" /> 
+  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+  <title>打榜</title> 
+  <link rel="stylesheet" href="./js/swiper3.1.0.min.css" /> 
+  <link rel="stylesheet" href="./js/common.css" /> 
+  <link rel="stylesheet" href="./js/common_19189.css" /> 
+ </head> 
+ <body class="bjf2"> 
+  <input type="hidden" name="shareUrl" id="shareUrl" /> 
+  <input type="hidden" name="projectId" id="projectId" value="19189" /> 
+  <div class="activity"> 
+   <div class="slider swiper-container swiper-container-horizontal"> 
+    <div class="swiper-wrapper">
+
+    </div> 
+    <div class="swiper-pagination cirle">
+
+    </div> 
+
+   </div> 
+   <!--轮播图end--> 
+   <div class="bjff"> 
+    <div class="headdiv"> 
+     <img src="./js/headpic.png" class="br50" /> 
+     <!--<span class="az br50"></span>--> 
+    </div> 
+    <div class="btn-group"> 
+     <span class="lfbtn br32" href="" id="joinBtn" clstag="pageclick|keycount|71_201505287|12">我也要打榜</span> 
+     <span class="rtbtn br32 bj6a5 " href="" id="pointbtn" onclick="like()" clstag="pageclick|keycount|71_201505287|13">帮TA打榜</span> 
+    </div> 
+   </div> 
+
+   <div class="friend-bj"> 
+    <h5 class="color666">赞过TA的好友<span class="color66a" id="likeNum">0位</span></h5> 
+    <ul class="friendDiv"> 
+
+    </ul> 
+    <div class="slidediv"> 
+     <div class="btn updownBtn">
+      <span class="downbtn"></span>
+     </div> 
+    </div> 
+    <div class="clear"></div> 
+   </div> 
+   <!--赞end--> 
+   <div class="friend-bj"> 
+    <h5 class="color666">活动说明</h5> 
+    <p class="sm-txt multi-no-wrap"></p> 
+    <div class="slidediv"> 
+     <div class="btn updownBtn2">
+      <span class="downbtn"></span>
+     </div> 
+    </div> 
+   </div> 
+   <div class="friend-list-bj"> 
+    <h5 class="color666">总排名</h5> 
+    <p class="count" hidden="hidden" style="display: none;">orz 小编正在统计...</p> 
+     <ul class="friend-list"> 
+
+
+    </ul>
+    <div class="swiper-slide-duplicatev" style="display: block;"> 
+     <div class="btn updownBtn3">
+      <span class="downbtn"></span>
+     </div> 
+    </div> 
+   </div> 
+  
+   <div class="xidi bj6a5"> 
+    <span class="btn ft36 download" clstag="pageclick|keycount|71_201505287|15">更多活动请下载时尚星秀app</span> 
+   </div> 
+  </div> 
+  
+
+  <script src="./js/zepto.js"></script> 
+ 
+  <script>
+      var id = location.search.replace(/\?id=(\d+).*/,'$1');
+      var uid = location.search.slice(location.search.indexOf("&uid=") + 5).split("&")[0];
+      // alert("id="+id+"uid="+uid);
+    //var uid = location.search.split("uid=")[1]; 
+    $(function(){
+        
+        //var id="113201";
+       var q_url="http://api.xingxiu.tv/index.php?app=mobile&mod=Recommend&act=starRank&star_id="+id+"&uid="+uid+"&returntype=jsonp&callback=?";
+          $.getJSON(q_url,function(data){
+                  if(data.star!=undefined){
+                      $(".headdiv img").attr("src",data.star.avatar);
+                      var num=data.banner.length;
+                      var p='';
+                       for (var i = 0;i<num; i++) {
+                        p+=''
+                        +'<div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1">'
+                           +'<img src="'+data.banner[i].pics+'" alt="" />'
+                        +'</div> '  
+                           
+                       } 
+                      $(".swiper-wrapper").append(p);
+
+                      $(".sm-txt").html(data.rule);
+                      var num2=data.diggusers.length;
+                      var p1='';
+                       for (var i = 0;i<num2; i++) {
+                        p1+=''
+                        +'<li>'
+                           +'<img src="'+data.diggusers[i].avatar+'"/>'
+                        +'</li> '  
+                           
+                       } 
+                       $(".friendDiv").html(p1);
+                        var friendLi = $('.friendDiv li');
+                        if(friendLi.length == 0 ){
+                            $('.updownBtn').hide();
+                            $('.friendDiv').siblings('h5').html('赞过我的好友<span class="color66a" id="likeNum">0</span>');
+                            $('.friendDiv').hide();
+                        }else{
+                            $('.updownBtn').show();
+                            $('.friendDiv').show();
+                        }//赞过我的好友 为0的状态
+
+                        var num3=data.user_rank.length;
+                        var p2='';
+                        var s=0;
+                         for (var i = 0;i<num3;i++) {
+                          s++;
+                          p2+=''
+                         +'<li>'
+                            +'<span class="num">'+s+'</span>'
+                            +'<span class="friend-img">'
+                              +'<span class="guan-icon"></span>'
+                              +'<img src="'+data.user_rank[i].avatar+'">'
+                            +'</span>'
+                            +'<span class="title">'+data.user_rank[i].uname+'</span>'
+                            +'<span class="zan-num">'
+                              +''+data.user_rank[i].digg+'<span class="zan-icon-gray"></span>'
+                            +'</span>'
+                          +'</li>'
+                             
+                         } 
+                       $(".friend-list").html(p2);
+
+                       var ranking = $('.activity .friend-list li');
+                        if($(ranking).length == 0){
+                            $('.updownBtn3').parent().hide();
+                            $('.count').show();
+                        }else if($(ranking).length <= 3){
+                            $('.updownBtn3').parent().hide();
+                            $('.count').hide();
+                        }else{
+                            $('.updownBtn3').parent().show();
+                            $('.count').hide();
+                        }
+
+                       $("#likeNum").html(data.diggusers.length+"位");
+
+                        var mySwiper = new Swiper('.swiper-container',{
+                            // autoplay: 3000,//可选选项，自动滑动
+                              loop: false,
+                              pagination : '.swiper-pagination',//分页器
+                              autoplayDisableOnInteraction : true
+                        });//轮播图
+                      
+                  }
+            });
+        $('#joinBtn').tap(function(){
+            $('#alert').removeClass('alertOut').show();
+            var clHeight = document.documentElement.clientHeight;//获取设备高度
+            var alertHeight = clHeight * 0.62 / 16;
+            $('.jz.alertdiv .alertbox').css('height',alertHeight+'rem');//计算弹窗高度
+            $('.alertbox').addClass('alertIn');
+            $('.activity,body').removeClass('mainAuto').addClass('mainWH');
+        });//直接参加按钮
+
+        $('#alertClose').tap(function(){
+            $('#alert').hide();
+            $('.activity,body').removeClass('mainWH').addClass('mainAuto');
+        });//关闭弹窗
+
+        var downloadurl='http://t.cn/R7COgYb'     //下载地址
+        var infourl='starshowtv://uid=112039';
+
+        $('.download').on('click',function () {
+        	/*  var ifr = document.createElement('iframe');
+            ifr.src = infourl;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            window.setTimeout(function(){
+                document.body.removeChild(ifr);*/
+                window.location.href = downloadurl;
+            //},1000)
+        });
+    
+        $('#joinBtn').on('click',function () {
+           /* var ifr = document.createElement('iframe');
+            ifr.src = infourl;
+            ifr.style.display = 'none';
+            document.body.appendChild(ifr);
+            window.setTimeout(function(){
+                document.body.removeChild(ifr);*/
+                window.location.href = downloadurl;
+            //},1000)
+        });
+    })
+    
+    function like() {
+        $('#pointbtn').addClass('bjddd');
+        var lurl="http://star.xingxiu.tv/star?star_id="+id+"&uid="+uid+"&returntype=jsonp&callback=?";
+        $.ajax({
+            url : lurl,
+            dataType : 'json',
+           // data: { uid: uid},
+            type : 'get',
+            global : false,
+            success : function(data) {
+                var v = data.resultCode;
+                if('2' == v){
+                    location.href = data.info ;
+                }else if ('1' == v) {
+                    $('.friendDiv').prepend('<li><img src="'+data.info.avatar+'" class="img-scale" /> </li>').show();
+                    var likeNum = parseInt($('#likeNum').text());
+                    likeNum = likeNum+1;
+                   $("#likeNum").html(likeNum+"位");
+                    //$('#pointbtn').unbind();
+                    $('#pointbtn').removeAttr("onclick");
+                } else if ('0' == v) {
+                    alert(data.info);
+                    //$('#pointbtn').unbind();
+                    $('#pointbtn').removeAttr("onclick");
+                }
+            }
+        });
+    }
+</script> 
+ <script src="./js/swiper3.1.0.min.js"></script> 
+<script src="./js/activity.main.js"></script> 
+ </body>
+</html>

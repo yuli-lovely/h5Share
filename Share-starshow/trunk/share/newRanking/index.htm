@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+ <head lang="zh-CN">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <meta charset="utf-8" /> 
+  <meta name="apple-itunes-app" content="app-id=903692043" /> 
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" /> 
+  <meta name="format-detection" content="telephone=no" /> 
+  <meta name="apple-mobile-web-app-capable" content="yes" /> 
+  <title>打榜</title> 
+  <link rel="stylesheet" href="./js/swiper3.1.0.min.css" /> 
+  <link rel="stylesheet" href="./js/common.css" /> 
+  <link rel="stylesheet" href="./js/common_19189.css" /> 
+ </head> 
+ <body class="bjf2"> 
+  <input type="hidden" name="shareUrl" id="shareUrl" /> 
+  <input type="hidden" name="projectId" id="projectId" value="19189" /> 
+  <div class="activity"> 
+   <div class="slider swiper-container swiper-container-horizontal"> 
+    <div class="swiper-wrapper">
+      <!--  <img src="images/tanwei.png" alt=""> -->
+    </div> 
+    <div class="swiper-pagination cirle">
+
+    </div>
+    <div class="ranksum">
+      <div class="ranksum_la" id="joinBtn">
+        <em></em>
+        <p>拉朋友</p>
+      </div>
+    </div> 
+   </div> 
+   <!--轮播图end--> 
+   <div class="y_ba_c"> 
+    领TA给你的奖品
+   
+   </div> 
+    <div class="clear"></div> 
+  <div class="sharebyme me">
+    <ul >
+    </ul>
+   
+  </div>
+  <div class="y_rank_num new_rank">
+    <p class="count" hidden="hidden" style="display: none;">orz 小编正在统计好友排名...</p> 
+    <ul class="friendlist">
+      
+    </ul>
+    <div class="slidediv"> 
+     <div class="btn updownBtn">
+      <span class="downbtn"></span>
+     </div> 
+    </div> 
+    </div>
+   
+    <div class="friend-bj y_friend-bj"> 
+    <h5 class="color666">和我一起加入打榜的好友<span class="color66a" id="likeNum">780位</span></h5> 
+    <ul class="friendDiv"> 
+
+    </ul> 
+    <div class="slidediv"> 
+     <div class="btn updownBtn">
+      <span class="downbtn"></span>
+     </div> 
+    </div> 
+    <div class="clear"></div> 
+   </div> 
+   <p class="y_p_c">分享给你的好友一起为你喜爱的明星打榜，即可获得TA给你的 惊喜好礼哦！</p>
+   <!-- <div class="xidi bj6a5"> 
+    <span class="btn ft36 download" clstag="pageclick|keycount|71_201505287|15"><em></em><strong>我也要打榜</strong><span>请下载时尚星秀APP</span></span> 
+   </div>  -->
+   <!--分享到朋友圈-->
+  
+  </div> 
+
+  <script src="./js/zepto.js"></script> 
+  <script>
+  var id = location.search.replace(/\?id=(\d+).*/,'$1');
+    var uid = location.search.slice(location.search.indexOf("&uid=") + 5).split("&")[0];
+    // alert("id="+id+"uid="+uid);    
+    $(function(){ 
+
+        //var id="113201";
+        var q_url="http://api.xingxiu.tv/index.php?app=mobile&mod=Recommend&act=rank&star_id="+id+"&uid="+uid+"&returntype=jsonp&callback=?"
+        // var q_url="http://api.xingxiu.tv/index.php?app=mobile&mod=Recommend&act=rank&star_id=118822&uid=818678&returntype=jsonp&callback=?"
+          $.getJSON(q_url,function(data){
+            console.log(data);
+            // $('.swiper-wrapper img').attr('src',data.star.banner);
+                  if(data.star!=undefined){
+                      var star_str='<div class="ranksum_zan">'+
+                                    '<p class="ranksum_zan_icon"><em></em></p>'+
+                                    '<p>'+data.star.digg_count+'</p>'+
+                                    '</div>'+
+                                    '<div class="ranksum_title">'+
+                                    '<p class="starname">'+data.star.uname+'</p>'+
+                                    '<p class="stardep"><em></em>'+data.star.group+'</p>'+
+                                    '<p>当前排名 第<span>'+data.star.grade+'</span>名</p>'+
+                                    '</div>';
+                      $('.ranksum').append(star_str);
+                      var my_str = '<li>'+
+                                    '<span class="y_mg_r"><img src="'+data.my.avatar+'" alt=""></span>'+
+                                    '<div class="me_div">'+
+                                    '<p>我的排名</p>'+
+                                    '<p class="share_deli_name">'+data.my.uname+'</p>'+
+                                    '<p class="share_deli_rank">当前排名 第<span class="color66a">'+data.my.grade+'</span>名</p>'+
+                                    '</div>'+
+                                    '<span class="new_rank_de share_num">'+data.my.frends+'<span></span></span>'+
+                                  '</li>';
+                      
+                      $('.me ul').append(my_str);
+                      if(data.my.frends==0){
+                        $('.share_deli_rank').text('暂无排名');
+                      }
+                      var user_rank_str=""
+                      var rlen=data.user_rank.length;
+                      console.log(rlen+'rlen')
+                      for(var i=0;i<rlen;i++){
+                        if(i==rlen-1){
+                          user_rank_str+='<li class="no_bord">'
+                        }else{
+                           user_rank_str+='<li class="">'
+                        }
+
+                        
+                         if(data.user_rank[i].avatar==''){
+                          user_rank_str+='<span class="y_mg_r">'+(i+1)+'</span>'+
+                                        '<span class="y_mg_r new_rank_img"><img src="images/icon.png" alt=""></span>'+
+                                        '<span>'+data.user_rank[i].uname+'</span>';
+                        } else{
+                          user_rank_str+='<span class="y_mg_r">'+(i+1)+'</span>'+
+                                        '<span class="y_mg_r new_rank_img"><img src="'+data.user_rank[i].avatar+'" alt=""></span>'+
+                                        '<span>'+data.user_rank[i].uname+'</span>';
+                        }               
+                                        
+                        if(i==0){
+                         user_rank_str+='<span class="new_rank_de active_first_c">'+data.user_rank[i].digg+'<span ></span></span>' 
+                        }else{
+                          user_rank_str+='<span class="new_rank_de share_num">'+data.user_rank[i].digg+'<span ></span></span>'
+                        }
+                         user_rank_str+='</li>';
+                      }
+                      $('.y_rank_num ul').append(user_rank_str);
+
+                      var p='<div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1">'
+                             +'<img src="'+data.star.banner+'" alt="" />'
+                             +'</div> '  
+                       if(data.star.banner==''){
+                         var p='<div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1">'
+                             +'<img src="images/defaultImage.png" alt="" />'
+                             +'</div> '  
+                       }
+                      $(".swiper-wrapper").append(p);
+
+                      // // $(".sm-txt").html(data.rule);
+                      var num2=data.diggusers.length;
+                      var p1='';
+                       for (var i = 0;i<num2; i++) {
+                        p1+=''
+                        +'<li>'
+                           +'<img src="'+data.diggusers[i].avatar+'"/>'
+                        +'</li> '  
+                           
+                       } 
+                       $(".friendDiv").html(p1);
+                        var friendLi = $('.friendDiv li');
+                        if(friendLi.length == 0 ){
+                            $('.updownBtn').hide();
+                            $('.friendDiv').siblings('h5').html('赞过我的好友<span class="color66a" id="likeNum">0</span>');
+                            $('.friendDiv').hide();
+                        }else{
+                            $('.updownBtn').show();
+                            $('.friendDiv').show();
+                        }//赞过我的好友 为0的状态
+
+                       var ranking = $('.friendlist li');
+                      
+                        if($(ranking).length == 0){
+                            $('.updownBtn3').parent().hide();
+                            $('.count').show();
+                        }else if($(ranking).length>4){
+                            //$('.updownBtn').parent().show();
+                            $('.friendlist').addClass('sharemin_hei');
+                             console.log($(ranking).length);
+                            $('.count').hide();
+                        }
+
+                       $("#likeNum").html(data.diggusers.length+"位");
+
+                        var mySwiper = new Swiper('.swiper-container',{
+                            // autoplay: 3000,//可选选项，自动滑动
+                              loop: false,
+                              pagination : '.swiper-pagination',//分页器
+                              autoplayDisableOnInteraction : true
+                        });//轮播图
+                      
+                  }
+                   $('.ranksum_zan_icon').on('tap',function(){
+                  //console.log('111');
+                  $('.ranksum_zan').addClass('active_zan');
+                  $(this).next('p').text(parseInt($(this).next('p').text())+1);
+                }) 
+            });
+
+        var downloadurl='http://t.cn/R7COgYb'     //下载地址
+        var infourl='starshowtv://uid=112039';
+
+        $('.download').on('click',function () {
+            window.location.href = downloadurl;
+        });
+      
+
+    })
+    
+    // function like() {
+    //     $('#pointbtn').addClass('bjddd');
+    //   var lurl="http://star.xingxiu.tv/star?star_id="+id+"&uid="+uid+"&returntype=jsonp&callback=?";
+    //     $.ajax({
+    //         url : lurl,
+    //         dataType : 'json',
+    //        //data: { shareUUID: '202f15c224104f5db93fb582e4f5b418', code: '0116a83ed72af3a0d6643460a1355721'},
+    //         type : 'get',
+    //         global : false,
+    //         success : function(data) {
+    //             var v = data.resultCode;
+    //             if('2' == v){
+    //                 location.href = data.info ;
+    //             }else if ('1' == v) {
+    //                 $('.friendDiv').prepend('<li><img src="'+data.info.avatar+'" class="img-scale" /> </li>').show();
+    //                 var likeNum = parseInt($('#likeNum').text());
+    //                 likeNum = likeNum+1;
+    //                 $('#likeNum').text(likeNum);
+    //                 //$('#pointbtn').unbind();
+    //                 $('#pointbtn').removeAttr("onclick");
+    //             } else if ('0' == v) {
+    //                 alert(data.info);
+    //                 //$('#pointbtn').unbind();
+    //                 $('#pointbtn').removeAttr("onclick");
+    //             }
+    //         }
+    //     });
+    // }
+    /*by YaraYu 2016/1/25*/
+    // $('.shadow').on('tap',function(){
+    //   $(this).hide();
+    //   $(this).next('.share_wechat').hide();
+    // })
+    $('#joinBtn').on('tap',function(){
+      window.location.href="?action=doShare";
+    })
+
+    
+</script> 
+   <script src="./js/swiper3.1.0.min.js"></script> 
+  <script src="./js/activity.main.js"></script> 
+ </body>
+</html>

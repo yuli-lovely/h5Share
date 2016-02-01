@@ -1,0 +1,322 @@
+#content {
+	width:100%;
+	position:relative;
+	overflow: hidden;
+}
+#thumbBox {
+	padding-bottom:5px;
+}
+/* images header */
+.imagesHeader {
+	width:100%;
+	height:40px;
+	background:#222;
+	line-height:40px;
+	text-align:center;
+	color:#fff;
+	-webkit-background-clip: padding; /* Safari 4? Chrome 6? */    
+	position:absolute;
+	top:0px;
+	left:0;
+	z-index:90;
+	-webkit-transition: -webkit-transform .2s ease-out;
+	-ms-transition: -ms-transform .2s ease-out;
+	transition: transform .2s ease-out;
+}
+.imagesHeader .back,.imagesInfo .shareBox {
+	width:40px;
+	height:100%;
+	float:left;
+}
+
+.imagesInfo .shareBox {
+	background:url(../images/iconsP.png) no-repeat -236px 1px;
+	background-size:auto 40px;
+}
+
+.imagesHeader .back {
+	background:url(../images/iconsP.png) no-repeat -475px top;
+	background-size:auto 40px;
+}
+
+.imagesHeader .comment {
+	width:50px;
+	height:100%;
+	float:right;
+	/*
+	background:url(../images/iconsP.png) no-repeat -395px top;
+	background-size:auto 40px;
+	*/
+	background:url(../images/IMG0.png) no-repeat center center;
+	background-size:40px 25px;
+	
+}
+
+.imagesHeader .title {
+	margin:0 41px;
+	font-size:16px;
+	height:40px;
+}
+
+/* 图集 */
+#picMenu {
+	width:156px;
+	background:#000;
+	position:fixed;
+	z-index:91;
+	top:0px;
+	right:0px;
+	overflow:hidden;
+	-webkit-transition: -webkit-transform .2s ease-out;
+	-ms-transition: -ms-transform .2s ease-out;
+	transition: transform .2s ease-out;
+	-webkit-transform:translate3d(156px,0,0);
+}
+#picMenu ul {
+	
+}
+#picMenu li {
+	margin:9px;
+	width:130px;
+	overflow:hidden;
+}
+
+#picMenu li img {
+	float:left;
+}
+
+#picMenu .show {
+	border:4px solid #fff;
+}
+
+#pool {
+	width:25px;
+	height:93px;
+	/*background:url(../images/iconsPool.png) no-repeat right top;*/
+	background-size:50px 93px;
+	position:absolute;
+	-webkit-transition: -webkit-transform .2s ease-out;
+	-ms-transition: -ms-transform .2s ease-out;
+	transition: transform .2s ease-out;
+	right:0;
+	z-index:91;
+}
+
+
+/* 图片信息 */
+.imagesInfo {
+	width:100%;
+	position:absolute;
+	left:0;
+	color:#999;
+	font-size:14px;
+	bottom: 0;
+}
+
+.imagesInfo .func,.imagesInfo .funcMask {
+	width:100%;
+height: 100px;
+position: absolute;
+bottom:72px;
+color: #fff;
+padding-left: 10px;
+background-color: rgba(37,37,37,0.4);
+}
+
+.imagesInfo .func2 {
+	width:90%;
+height: 100px;
+position: absolute;
+bottom:72px;
+color: #fff;
+padding-left: 5%;
+padding-right: 5%;
+background-color: rgba(37,37,37,0.4);
+}
+
+.imagesInfo .funcMask {
+	background:#000;
+	opacity:0.3;
+}
+
+
+
+#db,#dbList {
+	
+	width:255px;
+	height:58px;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:999;
+}
+
+#db  {
+	opacity: 0.6;
+	background:#000;
+}
+
+#dbList ul {
+	margin-top:10px;
+}
+
+#dbList li{
+	width:39px;
+	height:38px;
+	float:left;
+	margin-left:10px;
+}
+
+/* 分享 */
+.qzone,.tqq,.tsina,.renren,.douban {
+	background-size:auto 38px;
+}
+.qzone {
+	background:url(../images/iconsP.png) no-repeat -179px top;
+}
+.tqq {
+	background:url(../images/iconsP.png) no-repeat -90px top;
+}
+.tsina {
+	background:url(../images/iconsP.png) no-repeat 0px top;
+}
+.renren {
+	background:url(../images/iconsP.png) no-repeat -44px top;
+}
+.douban {
+	background:url(../images/iconsP.png) no-repeat -134px top;
+}
+
+.imagesInfo .totle {
+	border-right:#c00;
+	height:30px;
+	line-height:30px;
+	/*margin:0 15px 0 41px;*/
+	/*text-align:left;*/
+	/*background-color: hsla(0, 0%, 0%, 0.6);*/
+	font-size:13px;
+}
+.imagesInfo .title {
+	border-right:#c00;
+	height:30px;
+	line-height:30px;
+	font-size:16px;
+}
+.imagesInfo .brand {
+	border-right:#c00;
+	height:30px;
+	line-height:30px;
+	font-size:13px;
+}
+.imagesInfo .laiy {
+	border-right:#c00;
+	height:30px;
+	line-height:30px;
+	font-size:13px;
+}
+.imagesInfo .line {
+	width: 50%;
+	border-top: 1px solid hsl(60,2%,88%);
+	height:2px;
+	position: relative;
+	display: block;
+}
+.imagesInfo .des {
+	background:#000;
+	border-top:2px solid #000;
+	padding:15px 17px;
+	line-height:22px;
+	font-size:14px;
+	margin-top:40px;
+	min-height:60px;
+}
+
+
+.imagesInfo .t {
+	border-right:#c00;
+	height:30px;
+	line-height:30px;
+	/*margin:0 15px 0 41px;*/
+	/*text-align:center;*/
+	/*background-color: hsla(0, 0%, 0%, 0.6);*/
+	font-size:13px;
+}
+.imagesInfo .tit {
+	border-right:#c00;
+	height:30px;
+	line-height:30px;
+	font-size:16px;
+	width: 200px;
+display: block;
+overflow: hidden;
+float: left;
+position: relative;
+}
+.imagesInfo .tot{
+	border-right:#c00;
+	height:30px;
+	line-height:30px;
+	font-size:16px;
+	float: right;
+width: 60px;
+display: block;
+position: relative;
+text-align: right;
+}
+
+.imagesInfo .content {
+	line-height:22px;
+	font-size:14px;
+	height:60px;
+	overflow-y:scroll; 
+}
+
+
+.picList {
+	display: -webkit-box;
+	display: -moz-box;
+	display: box;
+	display: -webkit-flex;
+	display: -moz-flexbox;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-transform:translate3d(0,0,0);
+	height: 100%;
+}
+
+.picList li {
+	width:100%;
+	height: 100%;
+	margin-right: 10px;
+	overflow: hidden;
+	-webkit-box-flex: 0;
+	-moz-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	-moz-flex: 0 0 auto;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+}
+
+.picsContent a {
+	color:#bfbfbf;
+}
+
+.picSpan {
+	width:90%;
+	margin:auto;
+	display:block;
+	line-height:1.2em;
+	font-size:0.8em;
+	padding:5px 0;
+	text-align:left;
+}
+.bottom{position:fixed;bottom:0;background-color:rgba(37,37,37,.95);height:73px;width:100%;overflow:hidden}.bottom .left{background:url(../public/images/qsbg.png) 0 0 no-repeat;background-size:100%;width:150px;height:60px;position:relative;float:left;top:7px;left:10px}.bottom .right{background:url(../public/images/iphonedl.png) 0 0 no-repeat;background-size:100%;width:100px;height:35px;position:relative;float:right;top:20px;right:10px}
+
+
+
+/*判断屏幕-竖版*/
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5) and (orientation:portrait), only screen and (min-device-pixel-ratio : 1.5) and (orientation:portrait){ h1 strong { width:13em;} .textArea { height:125px;} .textArea p { height:5.5em;}} 
+
+
+/*判断屏幕-横板*/
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5) and (orientation:landscape), only screen and (min-device-pixel-ratio : 1.5) and (orientation:landscape){ h1 strong { width:22em;} .textArea { height:105px;} .textArea p { height:4.5em;}} 

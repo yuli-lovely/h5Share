@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="UTF-8">
+        <style type="text/css">
+          .wrapper {max-width: 480px;position: relative;margin: auto;right:240px;top: 85px;}.container{position:relative;zoom:1;}.side{_position:absolute;position:fixed;left:50%;top:0;margin-left:70px;margin-top:30px;padding-left:73px;width:330px;min-height:350px;padding-bottom:80px;}.container .main{float:left;width:100%;}.side .side-logo{display:block;width:360px;height:213px;background:url('../public/images/cx_pic1.png') no-repeat;overflow:hidden;text-indent:-9999px;margin-bottom:20px;position:relative;zoom:1;}.side .download{float:left;}.side .other-info{padding:0 0 0 10px;float:left;}.clearfix{zoom:1;}.side .download .iphone{display:block;text-indent:-9999px;margin-bottom:19px;width:218px;height:48px;background:url('../public/images/iphonebg1.png') 0 0 no-repeat scroll;position:relative;z-index:2;}.side .download .iphone:hover{background:url('../public/images/iphonebg2.png') 0 0 no-repeat scroll;}.side .download .android{display:block;text-indent:-9999px;margin-bottom:10px;width:239px;height:48px;background:url('../public/images/Androidbg.png') 0 0 no-repeat scroll;position:relative;z-index:2;}.container .main .post{background:hsl(0,100%,100%);position:relative;word-wrap:break-word;zoom:1;}.container .main .post .post-detail .post-comment .comment-list .comment-item{border-top:1px solid hsl(60,2%,88%);position:relative;zoom:1;line-height:22px;font-size:13px;margin-left:15px;padding: 10px 42px 32px 45px;}.container .main .post .post-detail .post-comment .comment-list .comment-item .item-avatar{position:absolute;left:0px;top:14px;width:44px;height:44px;border-radius:24px;}.container .main .post .post-detail .post-comment .comment-list .comment-item .item-datetime{position:absolute;right:20px;top:5px;font-size:12px;color:hsl(0,0%,63%);}.container .main .post .post-detail .post-comment .comment-list .comment-item .item-action{position:relative;left:10px;top:30px;font-size:12px;color:hsl(0,0%,63%);}.comment-item .item-author{position:absolute;left:55px;font-size:16px;color:#6c80a9;}.comment-item .item-content{position:relative;left:10px;top:25px;font-size:14px;color:#585858;}.thumb{background-color:hsl(0, 0%, 98%)}.thumb .comment-item{position:relative;zoom:1;line-height:24px;font-size:13px;padding:13px 16px 16px 16px;}.thumb .item-avatar{position:absolute;top:16px;width:44px;height:44px;border-radius:24px;}.thumb .item-action{position:relative;left:53px;top:25px;font-size:12px;width:100%;height:22px;color:hsl(0,0%,63%);}.thumb .item-author{position:relative;float: left; font-size:16px;color:#585858;}.thumb .lz{position:relative;left:58px; float: left; width:41px;height:23px;background:url('../public/images/lzbg.png') 0 0 no-repeat scroll; display: inline-block;background-size: 100%;}.thumb .icontent{position:relative;left:0px;padding-top:30px;font-size:14px;color:#646464;}.thumb .pic{position:relative;margin-top:10px;display:inline-block;margin-left:-3px;}.thumb .pic li{float:left;display:inline;margin-left:5px;position:relative;margin-left:4px; width:31%; overflow: hidden;}.comment-list .pl{width:300px;height:20px;position:relative;font-size:11px;color:#afafaf;padding: 15px 5px 5px 15px;}.comment-list .pl .ic{width:40px;height:14px;display:block;background:url('../public/images/plbg2.png') 0 0 no-repeat;float:left;position:relative;top:2px;padding-right:5px; background-size: 100%;}.post-detail{border-top: 1px solid hsl(60, 2%, 88%); background-color: #f5f5f5;}
+
+  .header{margin-bottom: 10px;position: absolute;z-index: 1;width: 100%;background-color:#000;height: 50px;}
+  .header p{ width: 980px; height: 50px;display: block;position:relative; margin: 0 auto;}
+  .header p .s1{ width: 98px; height: 31px; display: inline-block; position: relative; float: left;left: 10px; top: 10px;background:url('../public/images/logo.jpg') 0 0 no-repeat}
+  .header p .s2{ width: 217px; height:19px; display: inline-block; position: relative; float: right;right: 10px; top: 20px;background:url('../public/images/logo2.jpg') 0 0 no-repeat}
+  .side{_position:absolute;position:fixed;left:50%;top:50px;margin-left:100px;margin-top:30px;padding-left:73px;width:330px;min-height:350px;padding-bottom:40px;}
+  .container .main{float:left;width:450px;}
+  .side .side-logo{display:block;width:140px;height:170px;background:url('../public/images/xxrightbg1.png') no-repeat;overflow:hidden;text-indent:-9999px;margin-bottom:20px;position:relative;zoom:1;}
+  .side .download{float:left;}
+  .side .other-info{padding:0 0 0 10px;float:left;}
+  .clearfix{zoom:1;}
+  .side .download .iphone{display:block;text-indent:-9999px;margin-bottom:5px;width:239px;height:48px;background:url('../public/images/iphonebg1.png') 0 0 no-repeat scroll;position:relative;z-index:2;}
+  .bsly{display:block;text-indent:-9999px;margin-bottom:19px;width:138px;height:148px;background:url('../public/images/ewmbg.png') 0 0 no-repeat scroll;position:relative;z-index:2;top:100px;}
+  .side .download .android{display:block;text-indent:-9999px;margin-bottom:10px;width:239px;height:48px;background:url('../public/images/androidbg.png') 0 0 no-repeat scroll;position:relative;z-index:2;}
+  .co{background-color: #fff; width: 980px;  display: block; margin: 0 auto;}
+        </style>
+        <title>
+            帖子分享
+        </title>
+        <script type="text/javascript">
+          (function(W){
+             var id =location.search.replace(/\?id=(\d+).*/,'$1');
+            if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent.toLowerCase())){
+              W.location.href = "/topic/iPhone.html?id="+id;//跳转地址     
+            }
+          })(window);
+
+        </script>
+    </head>
+    
+    <body>
+	     <div class="header">
+        <p><span class="s1"></span><span class="s2"></span></p>
+      </div>
+         <div class="wrapper">
+            <div class="container clearfix">
+                <div class="main">
+                    <div class="post" data-logined="" data-uuid="I9e5oh2j" data-cmt-count="62">
+                        <div class="thumb">
+                            <div class="comment-item">
+                               <img class="item-avatar" src="../public/images/pic3.png">
+                               <div class="title" style="height: 28px;position: absolute; left:12px;">
+                                    <span class="item-author"></span>
+                                    <span class="lz"></span>
+                                </div>
+                                <div class="item-action">
+                                    
+                                </div>
+                                <p class="icontent">
+                                  
+                               
+                                </p>
+                                <div class="pic">
+                                    <ul>
+                                        
+                                    </ul>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        
+                        <div class="post-detail">
+                            <div class="post-comment">
+                                <div class="comment-list">
+                                     <div class="pl">
+                                        <span class="ic"></span>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="bottom">
+                       <div class="left"></div>
+                       <a href="http://t.cn/R7COgYb" class="right"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="side">
+          <a class="side-logo" href="">
+              
+          </a>
+          <div class="download clearfix">
+              <a class="iphone" target="_blank" href="http://t.cn/R7COgYb">
+              </a>
+              <a class="android" target="_blank" href="http://t.cn/R7COgYb">
+              </a>
+          </div>
+          <div class="bsly"></div>
+        </div>
+        <script src="/public/share/public/js/jquery1.9.1.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		// var tid="625";
+     var tid=location.search.replace(/\?id=(\d+).*/,'$1');
+         var plUrl = 'http://test-trendsapi.bazaarstar.cn/comment/gettopiclist?aid='+tid+'&appkey=bsf0951685a0df39&count=10&secret=3af6b6c2d7fc1591c58dc240d325e464&returntype=jsonp&jsonpcallback=?';//评论列表接口
+
+          var tzUrl = 'http://test-trendsapi.bazaarstar.cn/topic/detail?tid='+tid+'&appkey=bsf0951685a0df39&secret=3af6b6c2d7fc1591c58dc240d325e464&returntype=jsonp&jsonpcallback=?';//帖子内容接口
+		  </script>
+		 <script type="text/javascript" src="../public/js/tz.js"></script> 
+		 <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c5f6f7fbddb995362fc4bc8b1b6944c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+    </body>
+</html>
