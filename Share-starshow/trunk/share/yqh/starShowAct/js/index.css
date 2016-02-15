@@ -1,0 +1,378 @@
+@charset "utf-8";
+/*!
+* Author:Hematianer.com
+* ------------------------------
+* Email:art2006art@gmail.com
+* ------------------------------
+*/
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}.clear {font-size:0; line-height:0; height:0; clear:both; overflow:hidden;}.clearfix:after {clear: both;content: ".";display: block; height: 0;visibility: hidden;} * html .clearfix { zoom: 1; } /* IE6 */ *:first-child+html .clearfix { zoom: 1; } /* IE7 */img { display:block;}
+
+/*Basic Swiper Styles*/
+
+html {height: 100%;}
+body { font-family : 微软雅黑;position: relative; width: 100%;  height: 100%;}
+
+/*by Yara--2016/2/4*/
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  50% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3)
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1)
+  }
+
+  50% {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3)
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.pulse {
+  -webkit-animation: pulse 1s infinite ;
+  animation: pulse 1s infinite;
+}
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px)
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px)
+  }
+
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px)
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px)
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px)
+  }
+
+  80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px)
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0)
+  }
+}
+
+.bounceInRight {
+  -webkit-animation: bounceInRight 1s ;
+  animation: bounceInRight 1s;
+}
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px)
+  }
+}
+
+@keyframes fadeOutDownBig {
+  0% {
+    display: block;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0)
+  }
+
+  100% {
+    display: none;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px)
+  }
+}
+
+.fadeOutDownBig {
+
+  -webkit-animation: fadeOutDownBig 1s;
+  animation: fadeOutDownBig 1s;
+  /*display: none;*/
+}
+
+.xinfeng_in{
+  /*opacity: 1; transform:translate(0,-10px);*/
+  transition:all 1s;
+  opacity: 1;
+  transform:translate(0,0px);
+  -webkit-transition:all 1s;
+  opacity: 1;
+  -webkit-transform:translate(0,0px);
+}
+
+.xinfeng_out{opacity: 0; -webkit-transition:all 1s;transition:all 1s; z-index: -1;}
+.open_in{
+  opacity: 1;
+  /*transform:translate(0,0px);*/
+  transition:all 2s;
+}
+.open_out{
+opacity: 0;
+z-index: -1;
+}
+.star_in{
+  opacity: 1;
+  /*transform:translate(0,0px);*/
+  transition:all 2s;
+  z-index: 9;
+}
+.star_out{
+opacity: 0;
+z-index: -1;
+transition:all 1s;
+}
+.first .outimg1{
+  transform: translate(100%,0);
+  opacity: 0 !important;
+  display: none !important;
+ /* z-index: -1;*/
+  transition:all 1s;
+}
+.first .outimg2{
+  -webkit-transform:translate(-100%,0);
+  transform: translate(-100%,0);
+  opacity: 0 !important;
+  display: none !important;
+ /* z-index: -1;*/
+  transition:all 1s;
+}
+.first .outimg3{
+  transform: translate(0,2000px);
+  opacity: 0 !important;
+  display: none !important;
+ /* z-index: -1;*/
+  transition:all 1s;
+}
+.iframe body{
+  margin: 0;
+  padding: 0;
+}
+.canjia{
+      margin-top: -13%;
+    font-size: 0.78rem;
+    text-align: center;
+    font-style: "微软雅黑";
+}
+.boticon{
+  position: fixed;
+    bottom: 0;
+    background-image: url('22.png');
+    width: 100%;
+    height: 3.7rem;
+    background-size: 100% 100%;
+}
+.boticon p{
+  margin-top: 15px;
+    padding: 5px 10px;
+    /* border: 1px solid #ccc; */
+    /* width: 100px; */
+    float: right;
+    color: #fff;
+    background-color: #f55361;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+    z-index: 999;
+}
+.btnicon{
+  margin-top:13%;
+}
+.btnicon .gonglv{
+    width: 50%;
+    display: inline-block;
+    /*height: 30px;
+    line-height: 30px;*/
+}
+.btnicon .gonglv span,.btnicon .ditu span{
+    padding: 10px 15px;
+    background-color: #f55361;
+    float: right;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.btnicon .ditu span{
+  margin-right: 14%;
+}
+.iframe{opacity: 0; display: none;}
+.first .vid_in{
+  opacity: 1;
+  transition:all 0.5s;
+  z-index: 99;
+  display: block;
+}
+
+/*@media screen and(min-width: 414px){
+    .canjia{
+      margin-top: -6%;
+    font-size: 0.85rem;
+      }
+      .btnicon .ditu span{
+        margin-right: 18%;
+      }
+      .btnicon {
+         margin-top: 27%;
+      }
+}
+*/
+@media screen and (min-width: 414px){
+    .canjia{
+      margin-top: -6%;
+      font-size: 0.85rem;
+      }
+      .btnicon .ditu span{
+        margin-right: 18%;
+      }
+      .btnicon {
+         margin-top: 27%;
+      }
+}
+@media screen and (max-width: 320px){
+    .canjia{
+      margin-top: -26%;
+      font-size: 0.65rem;
+      }
+      /*.btnicon .ditu span{
+        margin-right: 18%;
+      }
+      .btnicon {
+         margin-top: 27%;
+      }*/
+}
+.gonglv-img,.ditu-img{
+  position: absolute;
+    top: 0;
+    width: 100%;
+    display: none;
+}
+.gonglv-img img,.ditu-img img{
+  width: 100%;
+}
+.closebtn{
+  width: 22px;
+    height: 22px;
+    background-image: url('closebtn.png');
+    z-index: 9999;
+    position: absolute;
+    top: 5%;
+    left: 6%;
+    background-size: 100% 100%;
+}
+
+.look_con .look{
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    margin-left: 10%;
+    height: 2rem;
+    line-height: 2rem;
+    color: #c80210;
+   /* padding-top: 4.5rem;*/
+}
+.look_con .look:before{
+display: inline-block; content: ''; background: url("ren.png") 0 0 no-repeat; width: 0.938rem; height: 0.938rem; background-size: 100% 100%; margin-left: 0.625rem;    vertical-align: -2px;
+    margin-right: 0.625rem;
+}
+.look_con .like:before{
+display: inline-block; content: ''; background: url("xin.png") 0 0 no-repeat; width: 0.95rem; height: 0.938rem; background-size: 100% 100%; margin-left: 0.625rem;    vertical-align: -2px;
+    margin-right: 0.625rem;
+}
+.look_con .like.activelike:before{
+display: inline-block; content: ''; background: url("xinz.png") 0 0 no-repeat; width: 0.95rem; height: 0.938rem; background-size: 100% 100%; margin-left: 0.625rem;    vertical-align: -2px;
+    margin-right: 0.625rem;
+}
+.look_con .like{color:#c80210; }
+.look_con{
+  position: absolute;
+    bottom: 6%;
+    width: 100%;
+    font-family: "微软雅黑";
+    z-index: 2;
+}
+.qianstatus3 .duihuak{
+  width: 32%;
+    margin-left: 16%;
+    margin-bottom: -5%;
+    z-index: 9999;
+}
+.duihuak1{
+      opacity: 0;
+    margin-top: 20%;
+    z-index: 999;
+    /* width: 30%; */
+    margin-left: 24%;
+    position: absolute;
+}
+.duihuak1 img{
+width: 55%;
+}
+.duihuak1_out{
+opacity: 0;
+z-index: -1;
+}
+.duihuak1_in{
+  opacity: 1;
+  /*transform:translate(0,0px);*/
+  transition:all 2s;
+  /*z-index: 9;*/
+}

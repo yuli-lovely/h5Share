@@ -20,7 +20,7 @@ $(function(){
         }else{
             $(this).find('span').removeClass().addClass('downbtn');
             if($(this).parent().prev().hasClass('friendlist')){
-                $(this).parent().prev().css('height','28rem');
+                $(this).parent().prev().css('height','22.5rem');
             }else{
                $(this).parent().prev().css('height','2.5rem'); 
             }

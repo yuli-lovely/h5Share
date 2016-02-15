@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="http://wx.ipropre.com/">--><base href=".">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="邀请函">
+<title>新年签</title>
+<style type="text/css">
+*{border: 0; padding: 0; margin: 0;}
+body{background-color: #e12f2a}
+.first .title{width: 100%}
+.first .title img
+{
+	width: 90%;
+	margin: 0 auto;
+	display: block;
+	padding-top: 1rem;
+}
+.first .wanyuan{
+	width: 100%;
+}
+.first .wanyuan img{
+	width: 70%;
+    margin: 0 auto;
+    display: block;
+    padding-top: 1rem;
+}
+.first .chouxingqian{
+	width: 100%;
+}
+.first .chouxingqian img{
+	width: 45%;
+    margin: 0 auto;
+    display: block;
+}
+.first .bottom{
+	width: 100%;
+}
+.first .bottom img{
+	width: 90%;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    margin-left: -45%;
+}
+.content{color: #fff;font-size: 1.2rem;}
+.look_con .look{
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10%;
+    height: 2rem;
+    line-height: 2rem;
+    color: #fff;
+    padding-top: 4.5rem;
+}
+.look_con .look:before{
+display: inline-block; content: ''; background: url("images/icon-eye.png") 0 0 no-repeat; width: 0.938rem; height: 0.938rem; background-size: 100% 100%; margin-left: 0.625rem;    vertical-align: -2px;
+    margin-right: 0.625rem;
+}
+.look_con .like:before{
+display: inline-block; content: ''; background: url("images/icon-zan.png") 0 0 no-repeat; width: 0.938rem; height: 0.938rem; background-size: 100% 100%; margin-left: 0.625rem;    vertical-align: -2px;
+    margin-right: 0.625rem;
+}
+@-webkit-keyframes slideInLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-2000px);
+		transform: translateX(-2000px)
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0)
+	}
+}
+
+@keyframes slideInLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-2000px);
+		-ms-transform: translateX(-2000px);
+		transform: translateX(-2000px)
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0)
+	}
+}
+
+.slideInLeft {
+	-webkit-animation: slideInLeft 1s;
+	animation: slideInLeft 1s;
+}
+@-webkit-keyframes slideInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(2000px);
+		transform: translateX(2000px)
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0)
+	}
+}
+
+@keyframes slideInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(2000px);
+		-ms-transform: translateX(2000px);
+		transform: translateX(2000px)
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0)
+	}
+}
+
+.slideInRight {
+	-webkit-animation: slideInRight 1s;
+	animation: slideInRight 1s;
+}
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+
+	50% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1)
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+}
+
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1)
+	}
+
+	50% {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1)
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1)
+	}
+}
+
+.pulse {
+	-webkit-animation: pulse 1s 1s infinite;
+	animation: pulse 1s 1s infinite;
+}
+</style>
+
+<!-- <link rel="stylesheet" href="./js/index.css"> -->
+
+</head>
+<body>
+ <div class="first">
+ 	<div class="title">
+ 		<img src="images/title.png" alt="" class="slideInLeft">
+ 	</div>
+ 	<div class="wanyuan">
+ 		<img src="images/wanyuan.png" alt="" class="slideInRight">
+ 	</div>
+ 	<div class="chouxingqian">
+ 		<img src="images/xing-icon.png" alt="" class="pulse">
+ 	</div>
+ 	<div class="look_con">
+ 		<div class="content">
+ 			<span class="look">111</span>
+ 		    <span class="like">111</span>
+ 		</div>
+ 	</div>
+ 	<div class="bottom">
+ 		<img src="images/bottom.png" alt="">
+ 	</div>
+ </div>  
+
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script src="./js/jweixin-1.0.0.js"></script>
+  <script type="text/javascript">
+	 
+$(document).ready(function(e) {
+	var video=[{'qian':'','starIcon':'','videoUrl':''}]
+	var videoinfo=video[Math.floor(Math.random() * video.length)];
+	cosole.log()
+	 $.getJSON('http://api.xingxiu.tv/index.php?app=mobile&mod=WeChat&act=sign&url='+encodeURIComponent(location.href)+'&returntype=jsonp&callback=?',function(d){
+                    if(d.info.status){
+                        wx.config({
+                        debug: false,
+                        appId: "wxff356e127c0ecb9e",
+                        timestamp: d.info.timestamp,
+                        nonceStr: "xingxiu2015",
+                        signature: d.info.signature,
+                        jsApiList: [    
+                            'checkJsApi',
+                            'onMenuShareTimeline',
+                            'onMenuShareAppMessage',
+                            'onMenuShareQQ',
+                            'onMenuShareWeibo',
+                            'hideMenuItems',
+                            'showMenuItems',
+                            'hideAllNonBaseMenuItem',
+                            'showAllNonBaseMenuItem',
+                            'translateVoice',
+                            'startRecord',
+                            'stopRecord',
+                            'onRecordEnd',
+                            'playVoice',
+                            'pauseVoice',
+                            'stopVoice',
+                            'uploadVoice',
+                            'downloadVoice',
+                            'chooseImage',
+                            'previewImage',
+                            'uploadImage',
+                            'downloadImage',
+                            'getNetworkType',
+                            'openLocation',
+                            'getLocation',
+                            'hideOptionMenu',
+                            'showOptionMenu',
+                            'closeWindow',
+                            'scanQRCode',
+                            'chooseWXPay',
+                            'openProductSpecificView',
+                            'addCard',
+                            'chooseCard',
+                            'openCard'
+                        ]
+                        });
+  
+                       wx.ready(function(){                        
+                        // 在这里调用 API
+                          wx.onMenuShareAppMessage({
+                            title: "来自苏芒的时尚星秀年度星秀人物盛典邀请",
+                            desc: "时尚星秀年度星秀人物邀请函",
+                            link: "http://star.xingxiu.tv/oauth2/come",
+                            imgUrl: "http://share.xingxiu.tv/yqh/ship/images/icon.jpg",
+                            trigger: function (res) {
+                            },
+                            success: function (res) {
+                            // alert('已分享');
+                            },
+                            cancel: function (res) {
+                            // alert('已取消');
+                            },
+                            fail: function (res) {
+                            // alert(JSON.stringify(res));
+                            }
+                          });
+                          wx.onMenuShareTimeline({
+                            title: "来自苏芒的时尚星秀年度星秀人物盛典邀请",
+                           link: "http://star.xingxiu.tv/oauth2/come",
+                             imgUrl: "http://share.xingxiu.tv/yqh/ship/images/icon.jpg",
+                            trigger: function (res) {
+                            },
+                            success: function (res) {
+                            // alert('已分享');
+                            },
+                            cancel: function (res) {
+                            // alert('已取消');
+                            },
+                            fail: function (res) {
+                            // alert(JSON.stringify(res));
+                            }
+                          });
+                        });
+                    } else {
+                      // alert(d.status);
+                    }
+                  })
+});
+
+</script>
+</body>
+</html>
